@@ -9,7 +9,8 @@ If you want to know how to use it as replacement for
 [Drush Make](https://github.com/drush-ops/drush/blob/8.x/docs/make.md) visit
 the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
 
-## Usage
+##Build with Lando
+
 
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
@@ -17,69 +18,45 @@ First you need to [install composer](https://getcomposer.org/doc/00-intro.md#ins
 You might need to replace `composer` with `php composer.phar` (or similar) 
 for your setup.
 
-After that you can create the project:
+[Follow here](https://docs.devwithlando.io/installation/installing.html) for Lando installation 
+
+clone this repository and run `lando composer install`
+
+update settings.php or setting.local.php file with local db details(check your lando info to get db credentials).
+```
+    $databases['default']['default'] = array (
+    'database' => 'drupal8',
+    'username' => 'drupal8',
+    'password' => 'drupal8',
+    'prefix' => '',
+    'host' => 'database',
+    'port' => '3306',
+    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+    'driver' => 'mysql',
+  );
+  ```
+  
+Config sync path in seetings.php must be set to 
+
+```$config_directories['sync'] = '../config/sync';```
+
+To setup pattern lab particle theme, go to `{root}/web/themes/particle` and run
+```
+   bash
+   npm install
+   npm run setup
+   npm run build:drupal
 
 ```
-composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
-```
 
-With `composer require ...` you can download new dependencies to your 
-installation.
+Go to drupal appearance and enable Particle theme and clear cache
 
-```
-cd some-dir
-composer require drupal/devel:~1.0
-```
 
-The `composer create-project` command passes ownership of all files to the 
-project that is created. You should create a new git repository, and commit 
-all files not excluded by the .gitignore file.
+you can run pattern lab using `npm start` while in {root}/web/themes/particle`
+On successfull build and start, pattern lab will be avaialble here:
 
-## What does the template do?
+>http://0.0.0.0:8080/app-pl/pl/
 
-When installing the given `composer.json` some tasks are taken care of:
-
-* Drupal will be installed in the `web`-directory.
-* Autoloader is implemented to use the generated composer autoloader in `vendor/autoload.php`,
-  instead of the one provided by Drupal (`web/vendor/autoload.php`).
-* Modules (packages of type `drupal-module`) will be placed in `web/modules/contrib/`
-* Theme (packages of type `drupal-theme`) will be placed in `web/themes/contrib/`
-* Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/contrib/`
-* Creates default writable versions of `settings.php` and `services.yml`.
-* Creates `web/sites/default/files`-directory.
-* Latest version of drush is installed locally for use at `vendor/bin/drush`.
-* Latest version of DrupalConsole is installed locally for use at `vendor/bin/drupal`.
-* Creates environment variables based on your .env file. See [.env.example](.env.example).
-
-## Updating Drupal Core
-
-This project will attempt to keep all of your Drupal Core files up-to-date; the 
-project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) 
-is used to ensure that your scaffold files are updated every time drupal/core is 
-updated. If you customize any of the "scaffolding" files (commonly .htaccess), 
-you may need to merge conflicts if any of your modified files are updated in a 
-new release of Drupal core.
-
-Follow the steps below to update your core files.
-
-1. Run `composer update drupal/core webflo/drupal-core-require-dev symfony/* --with-dependencies` to update Drupal Core and its dependencies.
-1. Run `git diff` to determine if any of the scaffolding files have changed. 
-   Review the files for any changes and restore any customizations to 
-  `.htaccess` or `robots.txt`.
-1. Commit everything all together in a single commit, so `web` will remain in
-   sync with the `core` when checking out branches or running `git bisect`.
-1. In the event that there are non-trivial conflicts in step 2, you may wish 
-   to perform these steps on a branch, and use `git merge` to combine the 
-   updated core files with your customized files. This facilitates the use 
-   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple; 
-   keeping all of your modifications at the beginning or end of the file is a 
-   good strategy to keep merges easy.
-
-## Generate composer.json from existing project
-
-With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
-you can now generate a basic `composer.json` file from an existing project. Note
-that the generated `composer.json` might differ from this project's file.
 
 
 ## FAQ
