@@ -1,0 +1,4 @@
+name: d-8-play
+recipe: drupal8
+config:
+  webroot: web
