@@ -1,0 +1,14 @@
+uuid: 4bc95f21-9c7f-43c3-8cc7-35ae1df9194d
+name: PlayGround
+mail: tariq.inaam@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
