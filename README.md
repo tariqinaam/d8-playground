@@ -22,7 +22,7 @@ for your setup.
 
 clone this repository and run `lando composer install`
 
-update settings.php or setting.local.php file with local db details(check your lando info to get db credentials).
+copy default.settings.php and create settings.php located in `web/sites/default/` and update settings.php  file with local db details(check your lando info to get db credentials).
 ```
     $databases['default']['default'] = array (
     'database' => 'drupal8',
@@ -39,6 +39,9 @@ update settings.php or setting.local.php file with local db details(check your l
 Config sync path in seetings.php must be set to 
 
 ```$config_directories['sync'] = '../config/sync';```
+
+This is your local env config, so you don't need to commit in repository.
+
 
 To setup pattern lab particle theme, go to `{root}/web/themes/particle` and run
 ```
