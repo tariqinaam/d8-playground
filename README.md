@@ -2,25 +2,21 @@
 
 [![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
 
-This project template provides a starter kit for managing your site
-dependencies with [Composer](https://getcomposer.org/).
+This project template provides a starter kit for Drupal 8 vanilla site with Pattern lab and Particle as base theme.
 
-If you want to know how to use it as replacement for
-[Drush Make](https://github.com/drush-ops/drush/blob/8.x/docs/make.md) visit
-the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
-
-##Build with Lando
+## Build with Lando
 
 
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
-> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
+> Note: The instructions above link refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
 You might need to replace `composer` with `php composer.phar` (or similar) 
 for your setup.
 
-[Follow here](https://docs.devwithlando.io/installation/installing.html) for Lando installation 
+If you dont have docker and lando setup on ur machine, [Follow here](https://docs.devwithlando.io/installation/installing.html) for Lando installation 
+Windows user can [follow this guide](https://docs.google.com/document/d/158hEpDepMMHNjv4Rvmq5whB5M9Q_OQNO4Log7bpK7SY/edit)
 
-clone this repository and run `lando composer install`
+clone this repository and run `lando composer install` from the root
 
 copy default.settings.php and create settings.php located in `web/sites/default/` and update settings.php  file with local db details(check your lando info to get db credentials).
 ```
