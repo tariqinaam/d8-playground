@@ -38,23 +38,14 @@ Config sync path in seetings.php must be set to
 
 This is your local env config, so you don't need to commit in repository.
 
+### Emulsify Template
 
-To setup pattern lab particle theme, go to `{root}/web/themes/particle` and run
-```
-   bash
-   npm install
-   npm run setup
-   npm run build:drupal
+Move into the original emulsify theme cd `web/themes/contrib/emulsify/`
+Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"`. 
 
-```
+Move into your theme directory cd web/themes/custom/THEME_NAME/
 
-Go to drupal appearance and enable Particle theme and clear cache
-
-
-you can run pattern lab using `npm start` while in {root}/web/themes/particle`
-On successfull build and start, pattern lab will be avaialble here:
-
->http://0.0.0.0:8080/app-pl/pl/
+Install the theme dependencies npm install or yarn install
 
 
 

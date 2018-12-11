@@ -1,0 +1,16 @@
+# Breakpoints - change based on site need
+mta_jalsa_connect.small:
+  label: small
+  mediaQuery: 'all and (min-width: 25em)'
+mta_jalsa_connect.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+mta_jalsa_connect.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+mta_jalsa_connect.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+mta_jalsa_connect.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'
