@@ -1,7 +1,7 @@
 {
   "name": "particle",
   "version": "10.1.0",
-  "description": "A starterkit to build a design system shared to Pattern Lab, Drupal, Grav",
+  "description": "A starterkit to build a design system shared to Pattern Lab, Drupal",
   "main": "gulpfile.js",
   "license": "GPL-2.0",
   "author": {
@@ -22,8 +22,6 @@
     "build:pl": "cross-env-shell NODE_ENV=production \"gulp compile:startup --config ./apps/pl/config.js && webpack --config ./apps/pl/webpack.config.js\"",
     "dev:drupal": "cross-env-shell NODE_ENV=development \"gulp compile:namespaces --config ./apps/drupal/config.js && webpack --watch --config ./apps/drupal/webpack.config.js\"",
     "build:drupal": "cross-env-shell NODE_ENV=production \"gulp compile:namespaces --config ./apps/drupal/config.js && webpack --config ./apps/drupal/webpack.config.js\"",
-    "dev:grav": "cross-env-shell NODE_ENV=development \"gulp compile:namespaces --config ./apps/grav/config.js && webpack --watch --config ./apps/grav/webpack.config.js\"",
-    "build:grav": "cross-env-shell NODE_ENV=production \"gulp compile:namespaces --config ./apps/grav/config.js && webpack --config ./apps/grav/webpack.config.js\"",
     "lint:js": "eslint --ext .js,.vue ./",
     "lint:scss": "stylelint '**/*.{css,scss}'",
     "lint:twig": "composer twig-lint lint ./apps && composer twig-lint lint ./source",
@@ -37,7 +35,7 @@
     "test": "npm run test:unit",
     "setup:pl": "cd ./apps/pl/pattern-lab && composer install --no-interaction --ignore-platform-reqs",
     "setup": "composer install --no-interaction --ignore-platform-reqs && npm run setup:pl",
-    "ci": "npm run lint && npm run test && npm run build:pl && npm run build:drupal && npm run build:grav",
+    "ci": "npm run lint && npm run test && npm run build:pl && npm run build:drupal",
     "new": "yo ./tools/new-component/index.js"
   },
   "dependencies": {
