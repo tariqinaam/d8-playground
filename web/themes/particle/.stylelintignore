@@ -1,8 +1,0 @@
-# Ignore any path/file using .gitignore syntax, ie:
-
-node_modules/
-
-dist/
-pattern-lab/
-
-_icons-generated.scss
