@@ -40,12 +40,9 @@ This is your local env config, so you don't need to commit in repository.
 
 ### Emulsify Template
 
-Move into the original emulsify theme cd `web/themes/contrib/emulsify/`
-Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"`. 
+cd into `web/themes/custom/mta_jalsa_connnect/`
 
-Move into your theme directory cd web/themes/custom/THEME_NAME/
-
-Install the theme dependencies npm install or yarn install
+Install the theme dependencies `npm install` or `yarn install`
 
 
 
